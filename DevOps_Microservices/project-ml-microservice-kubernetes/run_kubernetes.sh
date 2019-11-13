@@ -21,7 +21,9 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-echo "sleep for 12 seconds while waiting for pod"
-sleep 12
-kubectl port-forward deployment/mahadocker1 8080:80 
+echo "sleep for 60  seconds while waiting for pod"
+sleep 60
+kubectl port-forward pods/mahadocker1 8000:80 
+echo " Now calling kubectl logs"
 kubectl logs --selector app=mahadocker1
+echo " Completed the log selection"
